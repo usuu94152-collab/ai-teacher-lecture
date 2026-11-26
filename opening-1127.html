@@ -460,7 +460,7 @@ body.blackout::after{content:'';position:fixed;inset:0;background:#000;z-index:1
 /* ===== Part 01 evolution: dot rides an exponential curve, camera follows, final zoom-out ===== */
 .evs{--u:12.8px}
 .evx{position:absolute;inset:0;overflow:hidden;transition:opacity .6s var(--ease),visibility 0s}
-.evs[data-st="9"] .evx{opacity:0;visibility:hidden;transition:opacity .5s var(--ease),visibility 0s .5s}
+.evs[data-st="8"] .evx{opacity:0;visibility:hidden;transition:opacity .5s var(--ease),visibility 0s .5s}
 .evx .stg{position:absolute;left:0;top:0;width:1280px;height:720px;transform-origin:0 0}
 .evx .world{position:absolute;left:0;top:0;width:0;height:0;transform-origin:0 0}
 .evx .grid{position:absolute;left:-1600px;top:-3600px;width:8400px;height:5000px;background-image:radial-gradient(circle,#dbe3ee 1.3px,transparent 1.8px);background-size:34px 34px;opacity:.8;transition:opacity .8s}
@@ -623,10 +623,10 @@ body.blackout::after{content:'';position:fixed;inset:0;background:#000;z-index:1
 .evx .t3 p.last{margin-top:14px;padding:10px 14px;border-left:4px solid #2563eb;background:rgba(37,99,235,.07);border-radius:0 12px 12px 0;font-size:17px;color:#334155;opacity:0;transition:opacity .6s}
 .evx .t3 p.last b{color:#1d4ed8}
 .evs.d3a:not(.d3b) .evx .t3a{opacity:1;transform:none;transition-delay:.3s}
-.evs.d3b .evx .t3b{opacity:1;transform:none;transition-delay:3.2s;background:rgba(15,23,42,.55);box-shadow:0 20px 60px -20px rgba(0,0,0,.6)}
+.evs.d3b .evx .t3b{opacity:1;transform:none;transition-delay:1.6s;background:rgba(15,23,42,.55);box-shadow:0 20px 60px -20px rgba(0,0,0,.6)}
 .evs.d3b .evx .t3b h3{color:#fff}.evs.d3b .evx .t3b .kicker{color:#f9a8d4}.evs.d3b .evx .t3b p{color:#cbd5e1}
 .evs.d3b .evx .t3b p.last{background:rgba(255,255,255,.08);border-left-color:#f472b6;color:#e2e8f0}.evs.d3b .evx .t3b p.last b{color:#fff}
-.evs.d3b .evx .t3b p.last{opacity:1;transition-delay:4.8s}
+.evs.d3b .evx .t3b p.last{opacity:1;transition-delay:3.4s}
 .evs.ovw2 .evx .cvf{opacity:.75}
 .evx .agi{position:absolute;display:flex;align-items:baseline;gap:4px;transform:translate(-50%,-50%) scale(.6);opacity:0;transition:opacity .5s,transform .7s cubic-bezier(.3,1.6,.5,1)}
 .evx .agi b{font-size:34px;font-weight:900;letter-spacing:-.02em;background:linear-gradient(90deg,#7c3aed,#e11d48);-webkit-background-clip:text;background-clip:text;color:transparent}
@@ -649,7 +649,7 @@ body.blackout::after{content:'';position:fixed;inset:0;background:#000;z-index:1
 .evs .xi{position:relative;height:calc(100vh - clamp(54px,8vh,90px) - clamp(80px,12vh,110px));max-height:660px;min-height:420px}
 .evs .ttl{position:absolute;left:0;top:0;z-index:3;opacity:0;transform:translateY(16px);transition:opacity .5s var(--ease),transform .6s var(--ease)}
 .evs .ttl h2{font-size:clamp(1.6rem,3.7vw,2.9rem)}
-.evs[data-st="9"] .ttl{opacity:1;transform:none;transition-delay:.2s}
+.evs[data-st="8"] .ttl{opacity:1;transform:none;transition-delay:.2s}
 .agv{position:absolute;left:0;right:0;top:clamp(118px,25%,170px);display:grid;grid-template-columns:1.1fr .9fr;grid-template-rows:auto auto;column-gap:clamp(20px,4vw,56px);align-items:center;opacity:0;transform:translateY(22px);visibility:hidden;transition:opacity .4s var(--ease),transform .5s var(--ease),visibility 0s .5s}
 .agv.on{opacity:1;transform:none;visibility:visible;transition:opacity .6s var(--ease) .35s,transform .8s var(--ease) .35s,visibility 0s}
 .agv .sub{margin-top:0}
@@ -660,7 +660,7 @@ body.blackout::after{content:'';position:fixed;inset:0;background:#000;z-index:1
 .agv .cmp .row{opacity:0;transform:translateX(-14px);transition:opacity .5s var(--ease),transform .6s var(--ease)}
 .agv.on .cmp .row{opacity:1;transform:none}
 .agv.on .cmp .row:nth-child(1){transition-delay:.55s}.agv.on .cmp .row:nth-child(2){transition-delay:.8s}
-.evs:not([data-st="9"]) .xi{pointer-events:none}
+.evs:not([data-st="8"]) .xi{pointer-events:none}
 /* video popup */
 .evx .mm .fr{cursor:pointer}
 .evx .new .scr::before{content:'▶';position:absolute;z-index:2;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.92);color:#7c3aed;font-size:17px;padding-left:3px;box-sizing:border-box;box-shadow:0 6px 18px rgba(0,0,0,.35);opacity:0;transform:scale(.6);transition:opacity .3s,transform .4s cubic-bezier(.3,1.6,.5,1)}
@@ -1876,7 +1876,7 @@ body.blackout::after{content:'';position:fixed;inset:0;background:#000;z-index:1
   </div>
 </section>
 
-<section class="slide evs" data-accent="#2563eb" data-part="01 · 어디서부터 시작할까" data-steps="9" data-st="0">
+<section class="slide evs" data-accent="#2563eb" data-part="01 · 어디서부터 시작할까" data-steps="8" data-st="0">
   <div class="evx"><div class="e3"><canvas></canvas></div><div class="stg">
     <div class="world">
       <i class="grid"></i>
@@ -2001,7 +2001,7 @@ body.blackout::after{content:'';position:fixed;inset:0;background:#000;z-index:1
       <div class="kicker">01 · AI 활용, 어디서부터</div>
       <h2>생성형 AI에서<br><span class="grad">에이전틱 AI</span>로</h2>
     </div>
-    <div class="agv" data-k="9">
+    <div class="agv" data-k="8">
       <div class="ag-l">
         <p class="sub">ChatGPT를 잘 쓰는 것과<br>AI에게 일을 맡기는 것은 다르다.</p>
         <div class="cmp">
@@ -2152,7 +2152,7 @@ body.blackout::after{content:'';position:fixed;inset:0;background:#000;z-index:1
     /* no WebGL: skip the two 3D clicks and behave like before */
     s._step = function(k, was, inst){
       var go = function(st){ s.dataset.st = st; s.querySelectorAll('[data-k]').forEach(function(el){ el.classList.toggle('on', +el.dataset.k <= st); el.classList.toggle('cur', +el.dataset.k === st); }); };
-      if (k === 7 || k === 8){ if (inst || k > was) { prevStep0(6, was, true); go(9); } else go(6); return; }
+      if (k === 7){ if (inst || k > was) { prevStep0(6, was, true); go(8); } else go(6); return; }
       return prevStep0(k, was, inst);
     };
   }
@@ -2365,6 +2365,21 @@ body.blackout::after{content:'';position:fixed;inset:0;background:#000;z-index:1
       s.classList.toggle('d3a', tt > 4.4);
     }, function(){ setTip(U7); follow(tip.position.y, Bk); mixK(Bk, Bk, 0); s.classList.add('d3a'); });
   }
+  function climb(){
+    size(); build(); mode = 1; space = 0; setTip(UMAX); sheets.forEach(function(m){ m.userData.a = 0; placeSheet(m); });
+    s.classList.add('d3'); s.classList.remove('d3a', 'd3b');
+    mixK(K0, K0, 0); follow(W(UMAX, tmpP).y, A);
+    run(17000, function(p){
+      var tt = p * 17;
+      if (tt < 3.6){ mixK(K0, A, eio(cl((tt - .7) / 2.9))); }
+      else {
+        var e = cl((tt - 3.6) / 10.4), u = UMAX + (UTOP - UMAX) * (e < .5 ? 2 * e * e : 1 - Math.pow(-2 * e + 2, 2) / 2);
+        setTip(u); follow(tip.position.y, Bk); var k = eio(cl((tt - 8.5) / 7)); mixK(Bk, KS, k);
+        mode = tt > 9 ? 2 : 1; space = eio(cl((tt - 9.5) / 5));
+      }
+      s.classList.toggle('d3a', tt > 4.4); s.classList.toggle('d3b', tt > 11.5);
+    }, function(){ setTip(UTOP); mixK(KS, KS, 0); space = 1; mode = 2; s.classList.add('d3a', 'd3b'); });
+  }
   function rise(){
     mode = 2; s.classList.add('d3a', 'd3b');
     var start = {p: cP.clone(), l: cL.clone(), f: cF};
@@ -2388,15 +2403,13 @@ body.blackout::after{content:'';position:fixed;inset:0;background:#000;z-index:1
   }
   s._step = function(k, was, inst){
     if (inst){
-      if (k >= 7){ prevStep(6, was, true); still(k); if (k >= 9) mode = 0; return; }
+      if (k >= 7){ prevStep(6, was, true); still(8); if (k >= 8) mode = 0; return; }
       leave(); mode = 0; return prevStep(k, was, inst);
     }
-    if (k === 7 && was === 6) return breakOut();
-    if (k === 8 && was === 7){ if (anim){ var a = anim; anim = null; a.fn(1); a.done && a.done(); } return rise(); }
-    if (k === 7 && was === 8) return fall();
+    if (k === 7 && was === 6) return climb();
     if (k === 6 && was === 7) return leave();
-    if (k === 9){ mode = 0; return; }
-    if (k === 8 && was === 9) return still(8);
+    if (k === 8){ anim = null; mode = 0; return; }
+    if (k === 7 && was === 8) return still(8);
     return prevStep(k, was, inst);
   };
   addEventListener('resize', function(){ if (mode){ size(); go(); } });

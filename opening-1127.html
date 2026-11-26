@@ -2141,7 +2141,16 @@ body.blackout::after{content:'';position:fixed;inset:0;background:#000;z-index:1
   /* 3D: the curve keeps going past the edge of the screen.
      Step 7 rides the road from 2022 to today; step 8 looks up at the wall ahead. */
   var s = document.currentScript.closest('section');
-  if (!window.THREE) return;
+  var prevStep0 = s._step;
+  function fallback(){
+    /* no WebGL: skip the two 3D clicks and behave like before */
+    s._step = function(k, was, inst){
+      var go = function(st){ s.dataset.st = st; s.querySelectorAll('[data-k]').forEach(function(el){ el.classList.toggle('on', +el.dataset.k <= st); el.classList.toggle('cur', +el.dataset.k === st); }); };
+      if (k === 7 || k === 8){ if (inst || k > was) { prevStep0(6, was, true); go(9); } else go(6); return; }
+      return prevStep0(k, was, inst);
+    };
+  }
+  if (!window.THREE) return fallback();
   var T = THREE, box = s.querySelector('.e3'), cv = box.querySelector('canvas');
   var pin = s.querySelector('.pin3'), agi = s.querySelector('.agi3');
   var stg = s.querySelector('.stg');
@@ -2165,7 +2174,8 @@ body.blackout::after{content:'';position:fixed;inset:0;background:#000;z-index:1
   function tan(x){ var d = ys / SX * Math.exp(x / SX), l = Math.hypot(1, d); return [1 / l, d / l]; }
 
   /* ---- three ---- */
-  var R = new T.WebGLRenderer({canvas: cv, antialias: true, alpha: false, powerPreference: 'high-performance'});
+  var R;
+  try { R = new T.WebGLRenderer({canvas: cv, antialias: true, alpha: false, powerPreference: 'high-performance'}); } catch (e) { return fallback(); }
   R.outputEncoding = T.sRGBEncoding;
   var scene = new T.Scene(), HZ = new T.Color('#e8eef7');
   scene.fog = new T.Fog(HZ, 90, 900);

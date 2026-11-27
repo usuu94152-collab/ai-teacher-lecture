@@ -2826,11 +2826,11 @@ body.blackout::after{content:'';position:fixed;inset:0;background:#000;z-index:1
 
   var fr = s.querySelector('iframe.cfr'), started = 0;
   function play(){ if (!fr.srcdoc) fr.srcdoc = CASES[4];
-    var send = function(){ try { fr.contentWindow.postMessage({cmd:'play'}, '*'); } catch(e){} };
+    var send = function(){ try { if (fr.contentWindow.gsap) fr.contentWindow.gsap.globalTimeline.timeScale(1.6); fr.contentWindow.postMessage({cmd:'play'}, '*'); } catch(e){} };
     if (fr._ld) send(); else fr.onload = function(){ fr._ld = 1; setTimeout(send, 300); }; }
   addEventListener('message', function(e){ if (!fr.contentWindow || e.source !== fr.contentWindow || !e.data) return;
     if (!s.classList.contains('active')) return;
-    if (e.data.ev === 'hold') setTimeout(function(){ if (s.classList.contains('active')) fr.contentWindow.postMessage({cmd:'next'}, '*'); }, 2200);
+    if (e.data.ev === 'hold') setTimeout(function(){ if (s.classList.contains('active')) fr.contentWindow.postMessage({cmd:'next'}, '*'); }, 1200);
     else if (e.data.ev === 'done') setTimeout(function(){ if (s.classList.contains('active')) fr.contentWindow.postMessage({cmd:'play'}, '*'); }, 5000); });
   new MutationObserver(function(){ var a = s.classList.contains('active');
     if (a && !started){ started = 1; setTimeout(play, 700); } if (!a){ started = 0; try { fr.contentWindow.postMessage({cmd:'reset'}, '*'); } catch(e){} } }).observe(s, {attributes:true, attributeFilter:['class']});
